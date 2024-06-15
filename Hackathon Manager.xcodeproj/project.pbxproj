@@ -3,29 +3,81 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D864B36D2C1BE6F3005E7577 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D864B36C2C1BE6F3005E7577 /* FirebaseAnalytics */; };
+		D864B36F2C1BE6F3005E7577 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D864B36E2C1BE6F3005E7577 /* FirebaseAnalyticsSwift */; };
+		D864B3712C1BE6F3005E7577 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D864B3702C1BE6F3005E7577 /* FirebaseAuth */; };
+		D864B3732C1BE6F3005E7577 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D864B3722C1BE6F3005E7577 /* FirebaseFirestore */; };
+		D864B3752C1BE6F3005E7577 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D864B3742C1BE6F3005E7577 /* FirebaseFirestoreSwift */; };
+		D864B3772C1BE70B005E7577 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D864B3762C1BE70B005E7577 /* GoogleService-Info.plist */; };
 		D8B2CED52C151A48004B4856 /* Hackathon_ManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B2CED42C151A48004B4856 /* Hackathon_ManagerApp.swift */; };
-		D8B2CED72C151A48004B4856 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B2CED62C151A48004B4856 /* ContentView.swift */; };
+		D8B2CED72C151A48004B4856 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B2CED62C151A48004B4856 /* MainView.swift */; };
 		D8B2CED92C151A4C004B4856 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8B2CED82C151A4C004B4856 /* Assets.xcassets */; };
 		D8B2CEDC2C151A4C004B4856 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8B2CEDB2C151A4C004B4856 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D864B3762C1BE70B005E7577 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8B2CED12C151A48004B4856 /* Hackathon Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hackathon Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B2CED42C151A48004B4856 /* Hackathon_ManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hackathon_ManagerApp.swift; sourceTree = "<group>"; };
-		D8B2CED62C151A48004B4856 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D8B2CED62C151A48004B4856 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D8B2CED82C151A4C004B4856 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8B2CEDB2C151A4C004B4856 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D8CBD4442C1CF61100DE24FE /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Event.swift,
+				User.swift,
+			);
+			target = D8B2CED02C151A48004B4856 /* Hackathon Manager */;
+		};
+		D8CBD4492C1CF64400DE24FE /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				EventViewViewModel.swift,
+				"HomeViewViewModel 2.swift",
+				LoginViewViewModel.swift,
+				MainViewViewModel.swift,
+				MiscViewViewModel.swift,
+				NewEventViewViewModel.swift,
+				ProfileViewViewModel.swift,
+				ScheduleViewViewModel.swift,
+				SignupViewViewModel.swift,
+			);
+			target = D8B2CED02C151A48004B4856 /* Hackathon Manager */;
+		};
+		D8D5AB982C1D2A5A000E6B22 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Extensions.swift,
+			);
+			target = D8B2CED02C151A48004B4856 /* Hackathon Manager */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D8CBD4292C1CEED700DE24FE /* ViewModels */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D8CBD4492C1CF64400DE24FE /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ViewModels; sourceTree = "<group>"; };
+		D8CBD42A2C1CEEE200DE24FE /* Models */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D8CBD4442C1CF61100DE24FE /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Models; sourceTree = "<group>"; };
+		D8CBD42B2C1CEF0A00DE24FE /* Other */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D8D5AB982C1D2A5A000E6B22 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Other; sourceTree = "<group>"; };
+		D8CBD4332C1CF54A00DE24FE /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D8B2CECE2C151A48004B4856 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D864B3752C1BE6F3005E7577 /* FirebaseFirestoreSwift in Frameworks */,
+				D864B36F2C1BE6F3005E7577 /* FirebaseAnalyticsSwift in Frameworks */,
+				D864B3732C1BE6F3005E7577 /* FirebaseFirestore in Frameworks */,
+				D864B3712C1BE6F3005E7577 /* FirebaseAuth in Frameworks */,
+				D864B36D2C1BE6F3005E7577 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +103,15 @@
 		D8B2CED32C151A48004B4856 /* Hackathon Manager */ = {
 			isa = PBXGroup;
 			children = (
+				D8CBD42B2C1CEF0A00DE24FE /* Other */,
+				D8CBD42A2C1CEEE200DE24FE /* Models */,
+				D8CBD4292C1CEED700DE24FE /* ViewModels */,
+				D8CBD4332C1CF54A00DE24FE /* Views */,
 				D8B2CED42C151A48004B4856 /* Hackathon_ManagerApp.swift */,
-				D8B2CED62C151A48004B4856 /* ContentView.swift */,
+				D8B2CED62C151A48004B4856 /* MainView.swift */,
 				D8B2CED82C151A4C004B4856 /* Assets.xcassets */,
 				D8B2CEDA2C151A4C004B4856 /* Preview Content */,
+				D864B3762C1BE70B005E7577 /* GoogleService-Info.plist */,
 			);
 			path = "Hackathon Manager";
 			sourceTree = "<group>";
@@ -82,7 +139,17 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				D8CBD4332C1CF54A00DE24FE /* Views */,
+			);
 			name = "Hackathon Manager";
+			packageProductDependencies = (
+				D864B36C2C1BE6F3005E7577 /* FirebaseAnalytics */,
+				D864B36E2C1BE6F3005E7577 /* FirebaseAnalyticsSwift */,
+				D864B3702C1BE6F3005E7577 /* FirebaseAuth */,
+				D864B3722C1BE6F3005E7577 /* FirebaseFirestore */,
+				D864B3742C1BE6F3005E7577 /* FirebaseFirestoreSwift */,
+			);
 			productName = "Hackathon Manager";
 			productReference = D8B2CED12C151A48004B4856 /* Hackathon Manager.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +178,9 @@
 				Base,
 			);
 			mainGroup = D8B2CEC82C151A48004B4856;
+			packageReferences = (
+				D864B36B2C1BE6F3005E7577 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = D8B2CED22C151A48004B4856 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +197,7 @@
 			files = (
 				D8B2CEDC2C151A4C004B4856 /* Preview Assets.xcassets in Resources */,
 				D8B2CED92C151A4C004B4856 /* Assets.xcassets in Resources */,
+				D864B3772C1BE70B005E7577 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8B2CED72C151A48004B4856 /* ContentView.swift in Sources */,
+				D8B2CED72C151A48004B4856 /* MainView.swift in Sources */,
 				D8B2CED52C151A48004B4856 /* Hackathon_ManagerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,11 +345,12 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Hackathon Manager/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_IPHONEOS_DEPLOYMENT_TARGET)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,11 +374,12 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Hackathon Manager/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_IPHONEOS_DEPLOYMENT_TARGET)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -342,6 +415,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D864B36B2C1BE6F3005E7577 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.27.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D864B36C2C1BE6F3005E7577 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D864B36B2C1BE6F3005E7577 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		D864B36E2C1BE6F3005E7577 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D864B36B2C1BE6F3005E7577 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		D864B3702C1BE6F3005E7577 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D864B36B2C1BE6F3005E7577 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		D864B3722C1BE6F3005E7577 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D864B36B2C1BE6F3005E7577 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		D864B3742C1BE6F3005E7577 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D864B36B2C1BE6F3005E7577 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D8B2CEC92C151A48004B4856 /* Project object */;
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct Hackathon_ManagerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
