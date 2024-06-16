@@ -11,7 +11,12 @@ import UIKit
 struct ScheduleView: View {
 
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            VStack{
+                
+            }
+            .navigationTitle("Schedule")
+        }
     }
 }
 
