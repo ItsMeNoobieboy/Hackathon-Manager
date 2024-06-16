@@ -19,23 +19,19 @@ struct MainView: View {
         TabView {
             HomeView()
                 .tabItem() {
-                    Image(systemName: "house.fill")
-                    Text("Home")
+                    Label("Home", systemImage: "house.fill")
                 }
             ScheduleView()
                 .tabItem() {
-                    Image(systemName: "calendar")
-                    Text("Schedule")
+                    Label("Schedule", systemImage: "calendar")
                 }
             MiscView()
                 .tabItem() {
-                    Image(systemName: "note.text")
-                    Text("Misc")
+                    Label("Misc", systemImage: "note.text")
                 }
             handleProfileView()
                 .tabItem() {
-                    Image(systemName: "person.circle.fill")
-                    Text("Profile")
+                    Label("Profile", systemImage: "person.circle")
                 }
         }
     }
