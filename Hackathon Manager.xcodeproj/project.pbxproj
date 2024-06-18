@@ -40,7 +40,6 @@
 		D8CBD4492C1CF64400DE24FE /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				EventViewViewModel.swift,
 				"HomeViewViewModel 2.swift",
 				LoginViewViewModel.swift,
 				MainViewViewModel.swift,
