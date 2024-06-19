@@ -6,27 +6,51 @@
 //
 
 import Foundation
+import SwiftUI
 
 class ScheduleViewViewModel: ObservableObject{
     
     @Published var storedEvents: [Event] = [
         Event(title: "Check-in", description: "Check into HacKnight!", date:
-                .init(timeIntervalSince1970: 1717246800)),
+                .init(timeIntervalSince1970: 1717246800+1468800)),
         Event(title: "Opening Ceremony", description: "Welcome event", date:
-                .init(timeIntervalSince1970: 1717250400)),
+                .init(timeIntervalSince1970: 1717250400+1468800)),
         Event(title: "Workshop 1", description: "Your first learnathon workshop!", date:
-                .init(timeIntervalSince1970: 1717252200)),
+                .init(timeIntervalSince1970: 1717252200+1468800)),
         Event(title: "Lunch", description: "Costco pizza!", date:
-                .init(timeIntervalSince1970: 1717257600)),
+                .init(timeIntervalSince1970: 1717257600+1468800)),
         Event(title: "Workshop 2", description: "Your second learnathon workshop!", date:
-                .init(timeIntervalSince1970: 1717261200)),
+                .init(timeIntervalSince1970: 1717261200+1468800)),
+        Event(title: "HacKnight End", description: "The end of the first HacKnight ever!", date:
+                .init(timeIntervalSince1970: 1717365600+1468800)),
     ]
     
     @Published var currentWeek: [Date] = []
     @Published var currentDay: Date = Date()
+    @Published var filteredEvents: [Event]?
     
     init() {
         fetchCurrentWeek()
+        filterTodayEvents()
+    }
+    
+    func filterTodayEvents() {
+        DispatchQueue.global(qos: .userInteractive).async {
+            let calendar = Calendar.current
+            
+            let filtered = self.storedEvents.filter {
+                return calendar.isDate($0.date, inSameDayAs: self.currentDay)
+            }
+            
+            DispatchQueue.main.async {
+                withAnimation {
+                    self.filteredEvents = filtered
+                }
+            }
+            
+            print("Filtering for \(self.currentDay)")
+            print(filtered)
+        }
     }
     
     // Return the current week's days

@@ -65,13 +65,49 @@ struct ScheduleView: View {
                         .padding(.horizontal)
                         
                     }
-                } header: {
                     
+                    EventsView()
+                } header: {
+                    HeaderView()
                 }
             }
         }
     }
     
+    // List Events
+    func EventsView() -> some View {
+        LazyVStack(spacing: 18) {
+            if let events = viewModel.filteredEvents {
+                
+                if events.isEmpty {
+                    Text("No events found!")
+                        .font(.system(size:16))
+                        .fontWeight(.light)
+                        .offset(y: 100)
+                } else {
+                    ForEach(events) {event in
+                        EventCardView(event: event)
+                    }
+                }
+                
+            } else {
+                ProgressView()
+                    .offset(y: 100)
+            }
+        }
+        .onChange(of: viewModel.currentDay) { newValue in
+            viewModel.filterTodayEvents()
+        }
+    }
+    
+    // Event card View
+    func EventCardView(event: Event) -> some View {
+        HStack{
+            Text(event.title)
+        }
+    }
+    
+    // Header
     func HeaderView() -> some View {
         HStack(spacing: 10) {
             VStack(alignment: .leading, spacing: 10) {
