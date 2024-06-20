@@ -160,7 +160,7 @@ struct ScheduleView: View {
                 Text(Date().formatted(date: .abbreviated, time: .omitted))
                     .foregroundColor(.gray)
                 
-                Text("Today")
+                Text("Schedule")
                     .font(.largeTitle.bold())
             }
             .hLeading()
