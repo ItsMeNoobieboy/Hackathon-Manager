@@ -41,6 +41,9 @@ class ScheduleViewViewModel: ObservableObject{
             let filtered = self.storedEvents.filter {
                 return calendar.isDate($0.date, inSameDayAs: self.currentDay)
             }
+                .sorted { event1, event2 in
+                    return event1.date < event2.date
+                }
             
             DispatchQueue.main.async {
                 withAnimation {
@@ -48,8 +51,8 @@ class ScheduleViewViewModel: ObservableObject{
                 }
             }
             
-            print("Filtering for \(self.currentDay)")
-            print(filtered)
+            //            print("Filtering for \(self.currentDay)")
+            //            print(filtered)
         }
     }
     
@@ -85,5 +88,15 @@ class ScheduleViewViewModel: ObservableObject{
         let calendar = Calendar.current
         
         return calendar.isDate(currentDay, inSameDayAs: date)
+    }
+    
+    // Check if an event is during the current hour
+    func isCurrentHour(date: Date) -> Bool {
+        let calendar = Calendar.current
+        
+        let hour = calendar.component(.hour, from: date)
+        let currentHour = calendar.component(.hour, from: Date())
+        
+        return hour == currentHour
     }
 }

@@ -72,11 +72,12 @@ struct ScheduleView: View {
                 }
             }
         }
+        .ignoresSafeArea(.container, edges: .top)
     }
     
     // List Events
     func EventsView() -> some View {
-        LazyVStack(spacing: 18) {
+        LazyVStack(spacing: 20) {
             if let events = viewModel.filteredEvents {
                 
                 if events.isEmpty {
@@ -95,6 +96,9 @@ struct ScheduleView: View {
                     .offset(y: 100)
             }
         }
+        .padding()
+        .padding(.top)
+        // Updating events if day changes
         .onChange(of: viewModel.currentDay) { newValue in
             viewModel.filterTodayEvents()
         }
@@ -102,9 +106,51 @@ struct ScheduleView: View {
     
     // Event card View
     func EventCardView(event: Event) -> some View {
-        HStack{
-            Text(event.title)
+        HStack(alignment: .top, spacing: 30) {
+            VStack(spacing: 10) {
+                Circle()
+                    .fill(viewModel.isCurrentHour(date: event.date) ? .black : .clear)
+                    .frame(width: 15, height: 15)
+                    .background(
+                        Circle()
+                            .stroke(.black, lineWidth:1)
+                            .padding(-3)
+                    )
+                    .scaleEffect(!viewModel.isCurrentHour(date: event.date) ? 0.8 : 1)
+                
+                Rectangle()
+                    .fill(.black)
+                    .frame(width: 3)
+            }
+            
+            VStack {
+                
+                HStack(alignment: .top, spacing: 10) {
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text(event.title)
+                            .font(.title2.bold())
+                        Text(event.description)
+                            .font(.callout)
+                            .foregroundStyle(.secondary)
+                    }
+                    .hLeading()
+                    
+                    Text(event.date.formatted(date: .omitted, time: .shortened))
+                }
+                
+            }
+            .foregroundColor(viewModel.isCurrentHour(date: event.date) ? .white : .black)
+            .padding(viewModel.isCurrentHour(date: event.date) ? 15 : 0)
+            .padding(.bottom, viewModel.isCurrentHour(date: event.date) ? 0 : 10)
+            .hLeading()
+            .background(
+                Color(.black)
+                    .cornerRadius(25)
+                    .opacity(viewModel.isCurrentHour(date: event.date) ? 1 : 0)
+            )
+            
         }
+        .hLeading()
     }
     
     // Header
@@ -130,6 +176,7 @@ struct ScheduleView: View {
             }
         }
         .padding()
+        .padding(.top, getSafeArea().top)
         .background(Color.white)
     }
 }
@@ -153,5 +200,18 @@ extension View {
     func hCenter() -> some View {
         self
             .frame(maxWidth: .infinity, alignment: .center)
+    }
+    
+    // Safe Area
+    func getSafeArea() -> UIEdgeInsets {
+        guard let screen = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+            return .zero
+        }
+        
+        guard let safeArea = screen.windows.first?.safeAreaInsets else {
+            return .zero
+        }
+        
+        return safeArea
     }
 }
