@@ -11,24 +11,25 @@ import SwiftUI
 class ScheduleViewViewModel: ObservableObject{
     
     @Published var storedEvents: [Event] = [
-        Event(title: "Check-in", description: "Learnathon!", startTime: .init(timeIntervalSince1970: 1717246800+1468800), endTime: .init(timeIntervalSince1970: 1717250400+1468800)),
-        Event(title: "Opening Ceremony", description: "Learnathon", startTime: .init(timeIntervalSince1970: 1717250400+1468800), endTime: .init(timeIntervalSince1970: 1717252200+1468800)),
-        Event(title: "Workshop 1", description: "Your first learnathon workshop!", startTime: .init(timeIntervalSince1970: 1717252200+1468800), endTime: .init(timeIntervalSince1970: 1717257600+1468800)),
-        Event(title: "Lunch", description: "Costco pizza!", startTime: .init(timeIntervalSince1970: 1717257600+1468800), endTime: .init(timeIntervalSince1970: 1717261200+1468800)),
-        Event(title: "Workshop 2", description: "Your second learnathon workshop!", startTime: .init(timeIntervalSince1970: 1717261200+1468800), endTime: .init(timeIntervalSince1970: 1717266600+1468800)),
-        Event(title: "Closing Ceremony", description: "Learnathon", startTime: .init(timeIntervalSince1970: 1717266600+1468800), endTime: .init(timeIntervalSince1970: 1717268400+1468800)),
-        Event(title: "Check-in", description: "Overnight hackathon", startTime: .init(timeIntervalSince1970: 1717275600+1468800), endTime: .init(timeIntervalSince1970: 1717279200+1468800)),
-        Event(title: "Opening Ceremony", description: "Hackathon", startTime: .init(timeIntervalSince1970: 1717279200+1468800), endTime: .init(timeIntervalSince1970: 1717282800+1468800)),
-        Event(title: "Dinner", description: "Comella's Pasta!", startTime: .init(timeIntervalSince1970: 1717282800+1468800), endTime: .init(timeIntervalSince1970: 1717286400+1468800)),
-        Event(title: "Hacking!", description: "Time to work on your projects", startTime: .init(timeIntervalSince1970: 1717282800+1468800), endTime: .init(timeIntervalSince1970: 1717358400+1468800)),
-        Event(title: "Boba Drops Workshop", description: "Hosted by Hack Club!", startTime: .init(timeIntervalSince1970: 1717293600+1468800), endTime: .init(timeIntervalSince1970: 1717297200+1468800)),
-        Event(title: "Late Night Games", description: "Take a break from the hacking!", startTime:  .init(timeIntervalSince1970: 1717297200+1468800), endTime: .init(timeIntervalSince1970: 1717300800+1468800)),
-        Event(title: "Breakfast", description: "Croissants, muffins, bagels, and more!", startTime: .init(timeIntervalSince1970: 1717329600+1468800), endTime: .init(timeIntervalSince1970: 1717333200+1468800)),
-        Event(title: "Check-in", description: "Day hackathon", startTime: .init(timeIntervalSince1970: 1717329600+1468800), endTime: .init(timeIntervalSince1970: 1717333200+1468800)),
-        Event(title: "Lunch", description: "Otto Pizza!", startTime: .init(timeIntervalSince1970: 1717345800+1468800), endTime: .init(timeIntervalSince1970: 1717349400+1468800)),
-        Event(title: "Hack Scoop Workshop", description: "Hosted by Hack Club!", startTime: .init(timeIntervalSince1970: 1717351200+1468800), endTime: .init(timeIntervalSince1970: 1717354800+1468800)),
-        Event(title: "Presentations", description: "Science-fair like showcase", startTime:  .init(timeIntervalSince1970: 1717360200+1468800), endTime: .init(timeIntervalSince1970: 1717363800+1468800)),
-        Event(title: "Closing Ceremony", description: "Bye HacKnight!", startTime:  .init(timeIntervalSince1970: 1717363800+1468800), endTime: .init(timeIntervalSince1970: 1717365600+1468800)),
+        //
+        Event(title: "Check-in", description: "Learnathon!", startTime: .init(timeIntervalSince1970: 1717246800), endTime: .init(timeIntervalSince1970: 1717250400)),
+        Event(title: "Opening Ceremony", description: "Learnathon", startTime: .init(timeIntervalSince1970: 1717250400), endTime: .init(timeIntervalSince1970: 1717252200)),
+        Event(title: "Workshop 1", description: "Your first learnathon workshop!", startTime: .init(timeIntervalSince1970: 1717252200), endTime: .init(timeIntervalSince1970: 1717257600)),
+        Event(title: "Lunch", description: "Costco pizza!", startTime: .init(timeIntervalSince1970: 1717257600), endTime: .init(timeIntervalSince1970: 1717261200)),
+        Event(title: "Workshop 2", description: "Your second learnathon workshop!", startTime: .init(timeIntervalSince1970: 1717261200), endTime: .init(timeIntervalSince1970: 1717266600)),
+        Event(title: "Closing Ceremony", description: "Learnathon", startTime: .init(timeIntervalSince1970: 1717266600), endTime: .init(timeIntervalSince1970: 1717268400)),
+        Event(title: "Check-in", description: "Overnight hackathon", startTime: .init(timeIntervalSince1970: 1717275600), endTime: .init(timeIntervalSince1970: 1717279200)),
+        Event(title: "Opening Ceremony", description: "Hackathon", startTime: .init(timeIntervalSince1970: 1717279200), endTime: .init(timeIntervalSince1970: 1717282800)),
+        Event(title: "Dinner", description: "Comella's Pasta!", startTime: .init(timeIntervalSince1970: 1717282800), endTime: .init(timeIntervalSince1970: 1717286400)),
+        Event(title: "Hacking!", description: "Time to work on your projects", startTime: .init(timeIntervalSince1970: 1717282800), endTime: .init(timeIntervalSince1970: 1717358400)),
+        Event(title: "Boba Drops Workshop", description: "Hosted by Hack Club!", startTime: .init(timeIntervalSince1970: 1717293600), endTime: .init(timeIntervalSince1970: 1717297200)),
+        Event(title: "Late Night Games", description: "Take a break from the hacking!", startTime:  .init(timeIntervalSince1970: 1717297200), endTime: .init(timeIntervalSince1970: 1717300800)),
+        Event(title: "Breakfast", description: "Croissants, muffins, bagels, and more!", startTime: .init(timeIntervalSince1970: 1717329600), endTime: .init(timeIntervalSince1970: 1717333200)),
+        Event(title: "Check-in", description: "Day hackathon", startTime: .init(timeIntervalSince1970: 1717329600), endTime: .init(timeIntervalSince1970: 1717333200)),
+        Event(title: "Lunch", description: "Otto Pizza!", startTime: .init(timeIntervalSince1970: 1717345800), endTime: .init(timeIntervalSince1970: 1717349400)),
+        Event(title: "Hack Scoop Workshop", description: "Hosted by Hack Club!", startTime: .init(timeIntervalSince1970: 1717351200), endTime: .init(timeIntervalSince1970: 1717354800)),
+        Event(title: "Presentations", description: "Science-fair like showcase", startTime:  .init(timeIntervalSince1970: 1717360200), endTime: .init(timeIntervalSince1970: 1717363800)),
+        Event(title: "Closing Ceremony", description: "Bye HacKnight!", startTime:  .init(timeIntervalSince1970: 1717363800), endTime: .init(timeIntervalSince1970: 1717365600)),
     ]
     
     @Published var currentWeek: [Date] = []
@@ -64,7 +65,7 @@ class ScheduleViewViewModel: ObservableObject{
     
     // Return the current week's days
     func fetchCurrentWeek() {
-        let today = Date()
+        let today = Date(timeIntervalSince1970: 1717246800) // Set today to HacKnight week
         let calendar = Calendar.current
         
         let week = calendar.dateInterval(of: .weekOfMonth, for: today)
