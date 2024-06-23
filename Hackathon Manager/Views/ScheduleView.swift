@@ -77,7 +77,7 @@ struct ScheduleView: View {
     
     // List Events
     func EventsView() -> some View {
-        LazyVStack(spacing: 20) {
+        LazyVStack(spacing: 12) {
             if let events = viewModel.filteredEvents {
                 
                 if events.isEmpty {
@@ -107,26 +107,28 @@ struct ScheduleView: View {
     // Event card View
     func EventCardView(event: Event) -> some View {
         HStack(alignment: .top, spacing: 30) {
+            // Timeline Graphic
             VStack(spacing: 10) {
                 Circle()
-                    .fill(viewModel.isCurrentHour(date: event.date) ? .black : .clear)
+                    .fill(viewModel.isCurrent(event: event) ? .black : .clear)
                     .frame(width: 15, height: 15)
                     .background(
                         Circle()
                             .stroke(.black, lineWidth:1)
                             .padding(-3)
                     )
-                    .scaleEffect(!viewModel.isCurrentHour(date: event.date) ? 0.8 : 1)
+                    .scaleEffect(!viewModel.isCurrent(event: event) ? 0.8 : 1)
                 
                 Rectangle()
                     .fill(.black)
                     .frame(width: 3)
             }
             
+            // Card
             VStack {
                 
-                HStack(alignment: .top, spacing: 10) {
-                    VStack(alignment: .leading, spacing: 12) {
+                HStack(alignment: .top, spacing: 6) {
+                    VStack(alignment: .leading, spacing: 8) {
                         Text(event.title)
                             .font(.title2.bold())
                         Text(event.description)
@@ -135,18 +137,21 @@ struct ScheduleView: View {
                     }
                     .hLeading()
                     
-                    Text(event.date.formatted(date: .omitted, time: .shortened))
+                    VStack(alignment: .trailing, spacing: 0) {
+                        Text(event.startTime.formatted(date: .omitted, time: .shortened))
+                        Text(event.endTime.formatted(date: .omitted, time: .shortened))
+                    }
                 }
                 
             }
-            .foregroundColor(viewModel.isCurrentHour(date: event.date) ? .white : .black)
-            .padding(viewModel.isCurrentHour(date: event.date) ? 15 : 0)
-            .padding(.bottom, viewModel.isCurrentHour(date: event.date) ? 0 : 10)
+            .foregroundColor(viewModel.isCurrent(event: event) ? .white : .black)
+            .padding(viewModel.isCurrent(event: event) ? 12 : 0)
+            .padding(.bottom, viewModel.isCurrent(event: event) ? 0 : 10)
             .hLeading()
             .background(
                 Color(.black)
-                    .cornerRadius(25)
-                    .opacity(viewModel.isCurrentHour(date: event.date) ? 1 : 0)
+                    .cornerRadius(24)
+                    .opacity(viewModel.isCurrent(event: event) ? 1 : 0)
             )
             
         }

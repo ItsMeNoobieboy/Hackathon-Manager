@@ -11,5 +11,6 @@ struct Event: Identifiable {
     var id = UUID().uuidString
     var title: String
     var description: String
-    var date: Date
+    var startTime: Date
+    var endTime: Date
 }
