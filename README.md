@@ -16,3 +16,11 @@ The page for everything except the schedule and registration. Access files, sign
 ## (Half-implemented) Profile/Registration Page
 The sign-in page allows users to register, provide their necessary information, and update them as necessary.
 > Currently, you can only create an account, log in, and log out.
+
+
+# Current Installation Details
+Since the app is not done, you will have to manually download and run it in Xcode.
+1. Download the project (as a zip or however you like)
+2. Open the project in Xcode
+3. Make sure you have an iOS simulator installed. ([Docs](https://developer.apple.com/documentation/xcode/installing-additional-simulator-runtimes))
+4. Run the project!
